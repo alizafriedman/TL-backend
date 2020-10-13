@@ -12,7 +12,28 @@ Migrate(app, db)
 
 
 @app.route("/")
-@cross_origin(headers=["Content-Type", "Authorization"])
+@cross_origin(headers=["Content-Type"])
 def public():
     response = "Hello from a public endpoint! You don't need to be authenticated to see this."
     return jsonify(message=response)
+
+
+@app.route("/form", methods=['POST'])
+# @cross_origin(headers=["Content-Type"])
+def formInfo():
+    data = request.json
+    info = Form(
+        first_name = data['first_name'],
+        last_name = data['last_name'],
+        email = data['email'],
+        phone = data['phone'],
+        company = data['company'],
+        state = data['state'],
+        role = data['role']
+    )
+    db.session.add(info)
+    db.session.commit()
+    print(data)
+    print(data['first_name'])
+    print(data['state'])
+    return 201
