@@ -19,7 +19,6 @@ def public():
 
 
 @app.route("/form", methods=['POST'])
-# @cross_origin(headers=["Content-Type"])
 def formInfo():
     data = request.json
     info = Form(
@@ -33,7 +32,4 @@ def formInfo():
     )
     db.session.add(info)
     db.session.commit()
-    print(data)
-    print(data['first_name'])
-    print(data['state'])
-    return 201
+    return 'added successfully', 201
