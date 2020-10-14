@@ -1,8 +1,8 @@
 
 # Title Leap
 
-Frontend for app here: [Frontend Repo](https://github.com/alizafriedman/TL-backend)
-Backend for app here: [Backend Rep0](https://github.com/alizafriedman/two-fish)
+Backend for app here: [Backend Repo](https://github.com/alizafriedman/TL-backend)
+Frontend for app here: [Frontend Repo](https://github.com/alizafriedman/two-fish)
 
 
 ## To Run Locally 
